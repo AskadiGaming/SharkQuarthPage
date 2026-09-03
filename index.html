@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shark Quarth – das farbenfrohe Arcade-Puzzle mit über einer Million Leveln.">
+  <meta name="theme-color" content="#06152f">
+  <title>Shark Quarth – Arcade-Puzzle</title>
+  <style>
+    :root { --bg:#06152f; --bg-light:#0b2b51; --card:rgba(11,50,88,.7); --text:#f5fbff; --muted:#a8c4db; --cyan:#28d8f4; --yellow:#ffc52e; --line:rgba(143,213,244,.18); --radius:24px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--text); background:radial-gradient(circle at 78% 7%, rgba(18,150,203,.34), transparent 28rem), radial-gradient(circle at 10% 58%, rgba(15,106,163,.2), transparent 25rem), var(--bg); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.24; background-image:radial-gradient(circle at 20% 20%, #fff 0 1px, transparent 1px), radial-gradient(circle at 80% 35%, #fff 0 1px, transparent 1px); background-size:180px 180px,260px 260px; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:0 auto; position:relative; }
+    header { padding:22px 0; }
+    nav { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:850; letter-spacing:.02em; }
+    .brand-mark { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; color:#062445; background:linear-gradient(145deg,var(--cyan),#1882df); font-size:1.15rem; }
+    nav a { color:var(--muted); font-size:.95rem; }
+    nav a:hover { color:var(--text); }
+    .hero { display:grid; grid-template-columns:.86fr 1.14fr; gap:60px; align-items:center; padding:65px 0 76px; }
+    .eyebrow { color:var(--cyan); font-size:.76rem; font-weight:850; letter-spacing:.17em; text-transform:uppercase; }
+    h1 { max-width:620px; margin:12px 0 20px; font-size:clamp(2.8rem,6vw,5.35rem); line-height:.97; letter-spacing:-.06em; }
+    h1 span { color:var(--yellow); }
+    .intro { max-width:540px; margin:0; color:var(--muted); font-size:1.12rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; padding:13px 20px; border:1px solid var(--line); border-radius:999px; font-weight:780; transition:transform .2s ease,box-shadow .2s ease; }
+    .button:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(0,0,0,.2); }
+    .button-primary { color:#05213c; background:linear-gradient(135deg,var(--cyan),#54efff); border-color:transparent; }
+    .button-secondary { background:rgba(255,255,255,.05); }
+    .hero-image { display:block; width:100%; border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 30px 80px rgba(0,0,0,.4); }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding:16px 0 82px; }
+    .stat,.feature { padding:24px; border:1px solid var(--line); border-radius:var(--radius); background:var(--card); backdrop-filter:blur(10px); }
+    .stat strong { display:block; color:var(--yellow); font-size:1.65rem; line-height:1.2; }
+    .stat span { color:var(--muted); font-size:.9rem; }
+    section { padding:44px 0 78px; }
+    .section-heading { max-width:660px; margin-bottom:28px; }
+    h2 { margin:0 0 10px; font-size:clamp(2rem,4vw,3.25rem); line-height:1.05; letter-spacing:-.045em; }
+    .section-heading p { margin:0; color:var(--muted); }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .feature-icon { display:block; margin-bottom:16px; font-size:1.7rem; }
+    h3 { margin:0 0 8px; font-size:1.1rem; }
+    .feature p { margin:0; color:var(--muted); font-size:.94rem; }
+    .cta { padding:42px; border:1px solid rgba(40,216,244,.35); border-radius:var(--radius); background:linear-gradient(120deg,rgba(9,86,132,.82),rgba(7,39,75,.75)); text-align:center; }
+    .cta p { max-width:600px; margin:0 auto 24px; color:var(--muted); }
+    footer { padding:24px 0 36px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+    @media (max-width:820px) { .hero { grid-template-columns:1fr; gap:36px; padding-top:48px; } .hero-image { max-width:720px; } .features { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:560px) { .wrap { width:min(100% - 28px,1120px); } nav>div:last-child { display:none; } .hero { padding-bottom:54px; } .stats,.features { grid-template-columns:1fr; } .stats { padding-bottom:44px; } section { padding-bottom:54px; } .cta { padding:30px 20px; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><nav aria-label="Hauptnavigation"><a class="brand" href="#start"><span class="brand-mark" aria-hidden="true">◆</span> Shark Quarth</a><div><a href="#features">Features</a></div></nav></div></header>
+  <main id="start"><div class="wrap">
+    <section class="hero">
+      <div><div class="eyebrow">Das Arcade-Puzzle unter Wasser</div><h1>Zielen. Treffen. <span>Auflösen.</span></h1><p class="intro">Shark Quarth verbindet taktisches Denken mit schnellen Reaktionen: Bewege dein Schiff, feuere farbige Blöcke ab und schließe jede Formation, bevor sie die Gefahrenlinie erreicht.</p><div class="actions"><a class="button button-primary" href="#features">Spiel entdecken <span aria-hidden="true">&nbsp;↓</span></a><a class="button button-secondary" href="#community">Mehr über Shark Quarth</a></div></div>
+      <div><img class="hero-image" src="shark_quarth_feature_graphic_4_screens.png" alt="Vier Shark-Quarth-Spielansichten mit Level, Gameplay, täglicher Challenge und Pokalen"></div>
+    </section>
+    <div class="stats" aria-label="Shark Quarth auf einen Blick"><div class="stat"><strong>1.000.000+</strong><span>abwechslungsreiche Level</span></div><div class="stat"><strong>Jeden Tag</strong><span>neue Challenges</span></div><div class="stat"><strong>Dein Hai</strong><span>Profil, Erfahrung & Pokale</span></div></div>
+    <section id="features"><div class="section-heading"><div class="eyebrow">Warum Shark Quarth?</div><h2>Leicht zu lernen.<br>Anspruchsvoll zu meistern.</h2><p>Ein farbenfrohes Spiel für eine schnelle Runde – mit genug Tiefe, um deine Statistik immer weiter zu verbessern.</p></div><div class="features">
+      <article class="feature"><span class="feature-icon">🧩</span><h3>Besonderes Arcade-Puzzle</h3><p>Jeder Schuss zählt: Triff die richtige Spalte und lass ganze Blockgruppen verschwinden.</p></article>
+      <article class="feature"><span class="feature-icon">🚀</span><h3>Zielen mit deinem Schiff</h3><p>Bewege dich nach links und rechts, visiere deine Lücke an und feuere im richtigen Moment.</p></article>
+      <article class="feature"><span class="feature-icon">📅</span><h3>Tägliche Herausforderungen</h3><p>Jeden Tag wartet eine eigene Challenge auf dich. Vervollständige ganze Monate.</p></article>
+      <article class="feature"><span class="feature-icon">🏆</span><h3>Pokale & Statistiken</h3><p>Verfolge gelöste Level, sammle Monatspokale und beobachte deinen Fortschritt.</p></article>
+      <article class="feature"><span class="feature-icon">🦈</span><h3>Dein persönliches Hai-Profil</h3><p>Wähle deinen Lieblingshai, sammle Erfahrungspunkte und steige im Profillevel auf.</p></article>
+      <article class="feature"><span class="feature-icon">🌊</span><h3>Farbenfrohe Unterwasserwelt</h3><p>Flüssige Animationen, passende Sounds und kleine Erfolgsmomente bei jeder Auflösung.</p></article>
+    </div></section>
+    <section id="community"><div class="cta"><div class="eyebrow">Dein nächster Tauchgang</div><h2>Wie weit kommst du?</h2><p>Plane voraus, ziele präzise und räume das Spielfeld auf, bevor die Formen die Gefahrenlinie erreichen.</p><a class="button button-primary" href="#start">Nach oben ↑</a></div></section>
+  </div></main>
+  <footer><div class="wrap">© Shark Quarth · Ein Arcade-Puzzle unter Wasser · <a href="datenschutz.html">Datenschutzhinweis</a></div></footer>
+</body>
+</html>
